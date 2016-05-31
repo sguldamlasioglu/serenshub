@@ -12,7 +12,7 @@ from datetime import datetime
 
 # BRUTE FORCE ALGORITHM
 # Optimize route based on duration metrics
-# Starting and ending points of the route are constant
+# Starting point of the route is constant
 # Route optimized between starting and ending points
 
 
@@ -150,7 +150,7 @@ def main_route (nodes=None, instanceSize = 9, travel_mode = "driving"):
 if __name__=='__main__':
 
 
-    filename = '/home/stm/PycharmProjects/isttouristic/ist_data_short.csv'
+    filename = '/home/PycharmProjects/ist_data_short.csv'
 
     positions = []
     id = []
@@ -194,24 +194,6 @@ if __name__=='__main__':
                   body='{"status":"OK","rows":[]}',
                   status=200,
                   content_type='application/json')
-
-
-    # starts from topkapi
-    # Nodes = {
-    #     '1': (41.010501,28.982369),
-    #     '2': (41.015892, 28.977266),
-    #     '3': (41.008583,28.980175),
-    #     '4': (41.010501,28.982369),
-    #     '5': (41.013485,28.980738),
-    #     '6': (41.00893,28.977414),
-    #     '7': (41.008533,28.971266),
-    #     '8': (41.011065,28.96835),
-    #     '9': (41.008238,28.974359),
-    #     '10': (41.008236,28.976359)
-    #
-    # }
-
-
 
     Nodes = {
         '1': (41.010501,28.982369),

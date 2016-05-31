@@ -15,10 +15,13 @@ from sklearn.cross_validation import train_test_split
 import seaborn as sb
 import datetime
 
+# This work compares the success of Machine Learning algorithms which are used to predict bike share demand.
+# You can reach data through Kaggle.
 
-outPath = "/home/stm/PycharmProjects/bike_share/"
-train_file = '/home/stm/PycharmProjects/bike_share/bike_train.csv'
-test_file = '/home/stm/PycharmProjects/bike_share/bike_test.csv'
+
+outPath = "/home/PycharmProjects/bike_share/"
+train_file = '/home/PycharmProjects/bike_share/bike_train.csv'
+test_file = '/home/PycharmProjects/bike_share/bike_test.csv'
 
 train = pd.read_csv(train_file, parse_dates=[0])
 test = pd.read_csv(test_file, parse_dates=[0])

@@ -12,8 +12,8 @@ from datetime import datetime
 
 # BRUTE FORCE ALGORITHM
 # Optimize route based on distance metrics
-# Starting and ending points of the route are constant
-# Route optimized between starting and ending points
+# Starting point of the route is constant
+
 
 
 ## returns gmaps cost based on distances and durations

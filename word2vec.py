@@ -17,6 +17,8 @@ from gensim import corpora, models, similarities
 from gensim.models import hdpmodel, ldamodel
 from itertools import izip
 
+#word2vec is pointing out a relation between words
+
 def clean_comments(comments):
 
     items = []
@@ -63,10 +65,7 @@ def word2vec (sentence):
     # return model.most_similar("tavuk")
     # return model.most_similar("balik")
     # return model.most_similar("salata")
-    # return model.most_similar("yuklenmemisti")
-    # return model.most_similar("seferimizde")
     # return model.most_similar("menu")
-    # return model.most_similar("yolcumuz")
     # return model.most_similar("cocuk")
     # return model.most_similar("gazete")
     # return model.most_similar("koltukta")
@@ -74,43 +73,12 @@ def word2vec (sentence):
     return model.most_similar("bozuk")
 
 
-#
-# def lda(sentence):
-#
-#     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-#
-#     documents = list(itertools.chain(*sentence))
-#
-#     item_list = []
-#     for item in sentence:
-#         item = item.split()
-#         item_list.append(item)
-#
-#     texts = item_list
-#
-#     # remove words that appear only once
-#     all_tokens = sum(texts, [])
-#     tokens_once = set(word for word in set(all_tokens) if all_tokens.count(word) == 1)
-#     texts = [[word for word in text if word not in tokens_once]
-#              for text in texts]
-#
-#
-#     vocab_list = list(itertools.chain(*item_list))
-#
-#     lda = gensim.models.ldamodel.LdaModel(corpus=vocab_list, id2word= vocab_list,  num_topics=100, update_every=1, chunksize=10000, passes=1)
-#     return lda.print_topics(20)
-
-
-
-
-
 if __name__=='__main__':
 
-    filename1 = '/home/stm/PycharmProjects/thy_kabin/kabin_raporu_2015.csv'
-    filename2 = '/home/stm/PycharmProjects/thy_kabin/kabin_raporu_2015_devam.csv'
+    filename = '/home/PycharmProjects/report.csv'
 
 
-    with open(filename1) as file:
+    with open(filename) as file:
         file.next()
         train_reader = csv.reader(file, delimiter=';')
 
@@ -120,7 +88,6 @@ if __name__=='__main__':
         arrival_port = []      #varis limani
         queue_names = []       #kuyruk adlari
         passenger_number = []  #toplam yolcu sayisi
-        cabin_class = []       #ucak kabin siniflari
         unit = []
         categories = []        #kategoriler
         subjects =  []         #konular
@@ -132,13 +99,6 @@ if __name__=='__main__':
 
         for rows in train_reader:
             tarih = rows[0]
-            sefer_no = rows[1]
-            kalkis_liman = rows[2]
-            varis_liman = rows[3]
-            kuyruk_ad = rows[4]
-            toplam_yolcu = rows[5]
-            ucak_kabin_sinif = rows[6]
-            birim = rows[7]
             kategori = rows[8]
             konu = rows[9]
             detay = rows[10]
@@ -147,12 +107,6 @@ if __name__=='__main__':
             durum = rows[13]
 
             dates.append(tarih)
-            chulk_number.append(sefer_no)
-            departure_port.append(kalkis_liman)
-            arrival_port.append(varis_liman)
-            queue_names.append(kuyruk_ad)
-            passenger_number.append(toplam_yolcu)
-            cabin_class.append(ucak_kabin_sinif)
             categories.append(kategori)
             subjects.append(konu)
             detail.append(detay)

@@ -6,7 +6,7 @@
 import sys
 from operator import add
 
-data = sc.textFile("hdfs://bee13:8020/user/thy/cleaned_explanation_all")
+data = sc.textFile("hdfs://bee13:8020/user/xxx")
 data.count()
 
    

@@ -8,7 +8,7 @@ from pyspark.mllib.fpm import FPGrowth
 
 # In[3]:
 
-data = sc.textFile("hdfs://bee13:8020/user/thy/kabin_raporu_2015.csv")
+data = sc.textFile("hdfs://bee13:8020/user/xxx.csv")
 data.first()
 
 

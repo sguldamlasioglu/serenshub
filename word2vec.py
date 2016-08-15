@@ -7,7 +7,7 @@ import sys
 from operator import add
 from pyspark.mllib.feature import Word2Vec
 
-data = sc.textFile("hdfs://bee13:8020/user/isbak/nvd_cve_isim_description.csv")
+data = sc.textFile("hdfs://bee13:8020/user/xxx.csv")
 data.count()
 
 
